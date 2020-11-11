@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Examen.ViewModel.ExamenVM>
+@{
+    ViewBag.Title = "ListaExamenes";
+}
+
+<h2>Lista de Examenes</h2>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Listados de examenes cargados en la Base de Datos</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        Fecha
+                    </th>
+                    <th class="text-center">
+                        Nota
+                    </th>
+                    <th class="text-center">
+                        Nombre
+                    </th>
+                    <th class="text-center">
+                        Nivel
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var examenvm in Model) 
+                {
+                <tr class="text-center">
+                    <td>
+                        @examenvm.fecha
+                    </td>
+                    <td>
+                        @examenvm.nota
+                    </td>
+                    <td>
+                        @examenvm.nombre
+                    </td>
+                    <td>
+                        @examenvm.nivel
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

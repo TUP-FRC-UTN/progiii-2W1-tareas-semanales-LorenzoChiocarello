@@ -1,0 +1,54 @@
+﻿@model Examen.Models.Examenes
+@{
+    ViewBag.Title = "AltaExamen";
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.Items;
+}
+
+<h2>Alta Examen</h2>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Alta de nuevo Examen</h4>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm()) 
+{
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Fecha</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.fecha, htmlAttributes: new { @class = "form-control", @id = "txtFecha" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Nota</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.nota, htmlAttributes: new { @class = "form-control", @id = "txtNota" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Materia</label>
+                    @Html.DropDownList("idMateria", items, "Seleccione materia", htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group text-right">
+                <button class="btn btn-primary" type="submit">
+                    Guardar Socio
+                </button>
+            </div>
+
+
+        </div>
+
+        
+
+
+    </div>
+}
+
